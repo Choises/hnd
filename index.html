@@ -2,9 +2,8 @@
 body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relative; } 
 </style>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-    <title>7 🇬🇷Panagiotis🇬🇷</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🇬🇷Panagiotis🇬🇷</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
         * {
@@ -108,27 +107,19 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
             --wrapper-bg: linear-gradient(135deg, #ffffff, #ffff66, #ffcc00);
         }
 
-               /*  */
+        /*  */
         .radio-card {
-            width: 100vw;
-            height: 100vh;
-            min-width: 100vw; /* Αναγκάζει το πλάτος να μην μικρύνει ποτέ */
-            min-height: 100vh; /* Αναγκάζει το ύψος να μην μικρύνει ποτέ */
+            width: 360px;
             background: var(--bg-gradient);
-            border-radius: 0px; 
+            border-radius: 28px;
             padding: 24px;
             box-shadow: 0 12px 35px var(--shadow-color);
-            border: none; 
+            border: 2px solid var(--border-color);
             position: relative;
             overflow: hidden;
             color: #fff;
             transition: all 0.4s ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            box-sizing: border-box;
         }
-
 
         /* */
         .color-picker-bar {
@@ -376,8 +367,8 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
             cursor: pointer;
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
         }
-    </style><script src="https://jsdelivr.net"></script>
-
+    </style>
+<script src="//cdn.jsdelivr.net/npm/hls.js@latest"></script>
 </head>
 <body>
 
@@ -405,7 +396,7 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
 
         <div class="cover-container">
             <div class="logo-wrapper">
-                <video id="logoVideo" class="cover-video" src="https://rtmp.streams.ovh:1936/barazarelax/barazarelax/playlist.m3u8" poster="https://xatimg.com/image/trXiPll0bbwd.gif" loop="" muted="" playsinline=""></video>
+                <video id="logoVideo" class="cover-video" src="https://rtmp.streams.ovh:1936/barazarelax/barazarelax/playlist.m3u8" poster="https://xatimg.com/image/AKaNVo9lCbLT.jpg" loop="" muted="" playsinline=""></video>
 
             </div>
             <div class="date-time-overlay">
@@ -502,16 +493,15 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
             const change = Math.floor(Math.random() * 11) - 5;
             currentListeners = Math.max(100, currentListeners + change);
             listenerCount.textContent = currentListeners.toLocaleString('th-TH');
-        }, 4000);// 📦 Ρύθμιση για να παίζει το βίντεο m3u8 παντού
-if (Hls.isSupported()) {
-    const hls = new Hls();
-    hls.loadSource(logoVideo.src);
-    hls.attachMedia(logoVideo);
-} else if (logoVideo.canPlayType('application/vnd.apple.mpegurl')) {
-    // Για συσκευές Apple (Safari/iPhone) που το υποστηρίζουν ήδη
-    logoVideo.src = "https://rtmp.streams.ovh:1936/barazarelax/barazarelax/playlist.m3u8";
-}
-
+        }, 4000);
+ // 
+        if (Hls.isSupported()) {
+            const hls = new Hls();
+            hls.loadSource(logoVideo.src);
+            hls.attachMedia(logoVideo);
+        } else if (logoVideo.canPlayType('application/vnd.apple.mpegurl')) {
+            logoVideo.src = "https://rtmp.streams.ovh:1936/barazarelax/barazarelax/playlist.m3u8";
+        }
     </script>
 
 </body></html>
