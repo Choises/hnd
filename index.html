@@ -13,7 +13,7 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
             font-family: 'Kanit', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        body {
+       body {
             background: transparent !important;
             display: flex;
             justify-content: center;
@@ -110,29 +110,36 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
         /*  */
                 /*  */
                 /*  */
-        .radio-card {
-            width: 100vw; /* Παίρνει το 100% του πλάτους της οθόνης */
-            max-width: 100%; /* Δεν του επιτρέπει να μαζέψει ποτέ */
-            background: var(--bg-gradient);
-            border-radius: 0px; /* Καταργούμε τις στρογγυλές γωνίες για να κολλήσει στις άκρες */
-            padding: 24px;
-            box-shadow: 0 12px 35px var(--shadow-color);
-            border: none; /* Αφαιρούμε το περίγραμμα για να δείχνει ενιαίο στην οθόνη */
-            position: relative;
-            overflow: hidden;
-            color: #fff;
-            transition: all 0.4s ease;
-        }
-
-        /* Ρύθμιση για το body ώστε να μην αφήνει κανένα λευκό κενό γύρω-γύρω */
-        body {
+                body {
             background: transparent !important;
             display: flex;
             justify-content: center;
             align-items: center;
+            height: 100vh; /* Αναγκάζει το body να έχει το ίδιο ύψος με την οθόνη */
             min-height: 100vh;
-            padding: 0px !important; /* Μηδενίζουμε όλα τα εξωτερικά κενά */
+            padding: 0px !important; 
             margin: 0px !important;
+            overflow: hidden; /* Κρύβει τις μπάρες κύλισης */
+        }
+
+        /*  */
+        .radio-card {
+            width: 100vw; /* 100% του πλάτους της οθόνης */
+            height: 100vh; /* 100% του ύψους της οθόνης - Γεμίζει πάνω και κάτω */
+            max-width: 100%; 
+            max-height: 100%;
+            background: var(--bg-gradient);
+            border-radius: 0px; 
+            padding: 24px;
+            box-shadow: 0 12px 35px var(--shadow-color);
+            border: none; 
+            position: relative;
+            overflow: hidden;
+            color: #fff;
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Μοιράζει τα στοιχεία όμορφα από πάνω μέχρι κάτω */
         }
 
 
