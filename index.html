@@ -144,7 +144,14 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
             box-sizing: border-box;
         }
 
-
+body {
+                padding: 10px; /* Μειώνει τα κενά γύρω-γύρω στο κινητό */
+            }
+            .radio-card {
+                max-width: 100%; /* Αναγκάζει τον player να γίνει πλήρης οθόνη στο κινητό */
+                border-radius: 15px; /* Μικραίνει λίγο τις γωνίες στα κινητά για να κερδίσουμε χώρο */
+            }
+        }
 
         /* */
         .color-picker-bar {
