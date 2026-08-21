@@ -2,7 +2,8 @@
 body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relative; } 
 </style>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
     <title>🇬🇷Panagiotis🇬🇷</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -122,12 +123,12 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
             overflow: hidden; /* Κρύβει τις μπάρες κύλισης */
         }
 
-        /*  */
+                /*  */
         .radio-card {
-            width: 100vw; /* 100% του πλάτους της οθόνης */
-            height: 100vh; /* 100% του ύψους της οθόνης - Γεμίζει πάνω και κάτω */
-            max-width: 100%; 
-            max-height: 100%;
+            width: 100vw;
+            height: 100vh;
+            min-width: 100vw; /* Αναγκάζει το πλάτος να μην μικρύνει ποτέ */
+            min-height: 100vh; /* Αναγκάζει το ύψος να μην μικρύνει ποτέ */
             background: var(--bg-gradient);
             border-radius: 0px; 
             padding: 24px;
@@ -139,7 +140,8 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
             transition: all 0.4s ease;
             display: flex;
             flex-direction: column;
-            justify-content: space-between; /* Μοιράζει τα στοιχεία όμορφα από πάνω μέχρι κάτω */
+            justify-content: space-between;
+            box-sizing: border-box;
         }
 
 
