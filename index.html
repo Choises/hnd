@@ -376,7 +376,8 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
             cursor: pointer;
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
         }
-    </style>
+    </style><script src="https://jsdelivr.net"></script>
+
 </head>
 <body>
 
@@ -501,7 +502,16 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
             const change = Math.floor(Math.random() * 11) - 5;
             currentListeners = Math.max(100, currentListeners + change);
             listenerCount.textContent = currentListeners.toLocaleString('th-TH');
-        }, 4000);
+        }, 4000);// 📦 Ρύθμιση για να παίζει το βίντεο m3u8 παντού
+if (Hls.isSupported()) {
+    const hls = new Hls();
+    hls.loadSource(logoVideo.src);
+    hls.attachMedia(logoVideo);
+} else if (logoVideo.canPlayType('application/vnd.apple.mpegurl')) {
+    // Για συσκευές Apple (Safari/iPhone) που το υποστηρίζουν ήδη
+    logoVideo.src = "https://rtmp.streams.ovh:1936/barazarelax/barazarelax/playlist.m3u8";
+}
+
     </script>
 
 </body></html>
