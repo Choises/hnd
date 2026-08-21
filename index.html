@@ -109,30 +109,32 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
 
         /*  */
                 /*  */
+                /*  */
         .radio-card {
-            width: 100%; /* Πιάνει όλο το πλάτος στα κινητά */
-            max-width: 450px; /* Το μέγιστο μέγεθος που θα παίρνει σε μεγάλο υπολογιστή για να μην παραμορφωθεί */
+            width: 100vw; /* Παίρνει το 100% του πλάτους της οθόνης */
+            max-width: 100%; /* Δεν του επιτρέπει να μαζέψει ποτέ */
             background: var(--bg-gradient);
-            border-radius: 28px;
+            border-radius: 0px; /* Καταργούμε τις στρογγυλές γωνίες για να κολλήσει στις άκρες */
             padding: 24px;
             box-shadow: 0 12px 35px var(--shadow-color);
-            border: 2px solid var(--border-color);
+            border: none; /* Αφαιρούμε το περίγραμμα για να δείχνει ενιαίο στην οθόνη */
             position: relative;
             overflow: hidden;
             color: #fff;
             transition: all 0.4s ease;
         }
 
-        /* Ειδική ρύθμιση για να γεμίζει η οθόνη στα κινητά, ακόμα και με 'Έκδοση για υπολογιστή' */
-        @media (max-width: 768px) {
-            body {
-                padding: 10px; /* Μειώνει τα κενά γύρω-γύρω στο κινητό */
-            }
-            .radio-card {
-                max-width: 100%; /* Αναγκάζει τον player να γίνει πλήρης οθόνη στο κινητό */
-                border-radius: 15px; /* Μικραίνει λίγο τις γωνίες στα κινητά για να κερδίσουμε χώρο */
-            }
+        /* Ρύθμιση για το body ώστε να μην αφήνει κανένα λευκό κενό γύρω-γύρω */
+        body {
+            background: transparent !important;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 0px !important; /* Μηδενίζουμε όλα τα εξωτερικά κενά */
+            margin: 0px !important;
         }
+
 
 
         /* */
